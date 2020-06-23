@@ -1,5 +1,6 @@
+import pyautogui
 import pyperclip as clip
-import pyautogui, time
+import time
 
 def main():
 	time.sleep(5)
@@ -7,12 +8,10 @@ def main():
 		for line in f:
 			for word in line.split(' '):
 				clip.copy(word)
-				clip.paste()
+				pyautogui.hotkey('ctrl','v')
 				pyautogui.press('enter')
 	
 
 
 if __name__ == '__main__':
 	main()
-
-
